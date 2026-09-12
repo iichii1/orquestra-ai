@@ -1,0 +1,1 @@
+﻿Crie uma landing page moderna e responsiva para OrbitOps usando HTML, CSS e JavaScript separados. Inclua hero, beneficios, metricas, depoimentos, precos, FAQ, CTA, menu mobile, tema claro e escuro persistido, formulario com validacao, acessibilidade e README. Revise o resultado duas vezes antes de finalizar.

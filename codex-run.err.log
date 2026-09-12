@@ -1,0 +1,7 @@
+No linha:1 caractere:189
++ ... . Ao terminar, mesmo incompleto ou com erro, faca git add -A, commit  ...
++                                                                 ~
+Argumento ausente na lista de parƒmetros.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingArgument
+ 
