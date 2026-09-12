@@ -1,237 +1,228 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="OrbitOps é o centro de controle para operações que precisam se mover rápido, com contexto, automações e rastreabilidade."
-    />
-    <meta name="theme-color" content="#10121a" />
-    <title>OrbitOps — Operações em órbita</title>
+    <meta name="description" content="OrbitOps is the calm control plane for teams that ship continuously." />
+    <meta name="theme-color" content="#101110" />
+    <title>OrbitOps — Keep every operation in orbit</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <script defer src="script.js"></script>
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem("orbitops-theme");
+          var preferredTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+          document.documentElement.dataset.theme = savedTheme || preferredTheme;
+        } catch (error) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
   </head>
   <body>
-    <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header class="site-header" data-header>
+    <header class="site-header" id="top">
       <div class="container nav-wrap">
-        <a class="brand" href="#topo" aria-label="OrbitOps, início">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 34 34" fill="none">
-              <circle cx="17" cy="17" r="5.2" fill="currentColor" />
-              <ellipse cx="17" cy="17" rx="14.2" ry="6.4" stroke="currentColor" stroke-width="1.8" transform="rotate(-24 17 17)" />
-              <circle cx="28.2" cy="9.8" r="2.2" fill="#c9f86c" />
-            </svg>
-          </span>
-          <span>Orbit<span class="brand-accent">Ops</span></span>
+        <a class="brand" href="#top" aria-label="OrbitOps home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>orbit<span>ops</span></span>
         </a>
 
-        <nav class="desktop-nav" aria-label="Navegação principal">
-          <a href="#produto">Produto</a>
-          <a href="#fluxo">Como funciona</a>
-          <a href="#seguranca">Segurança</a>
-          <a href="#precos">Planos</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
+          <span></span><span></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+          <a href="#platform">Platform</a>
+          <a href="#results">Results</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
         </nav>
 
         <div class="nav-actions">
-          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Alternar modo de cor" aria-pressed="false">
+          <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+            <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
             <span class="theme-icon theme-icon-sun" aria-hidden="true">☼</span>
-            <span class="theme-label">Modo claro</span>
           </button>
-          <a class="button button-small button-ghost nav-cta" href="#demo">Falar com a equipe <span aria-hidden="true">↗</span></a>
-          <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu">
-            <span class="sr-only">Abrir menu</span>
-            <span></span><span></span>
-          </button>
+          <a class="button button-small button-ghost nav-cta" href="#contact">Book a demo <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <nav class="mobile-menu" id="mobile-menu" data-mobile-menu aria-label="Navegação mobile" aria-hidden="true">
-        <a href="#produto">Produto <span aria-hidden="true">↗</span></a>
-        <a href="#fluxo">Como funciona <span aria-hidden="true">↗</span></a>
-        <a href="#seguranca">Segurança <span aria-hidden="true">↗</span></a>
-        <a href="#precos">Planos <span aria-hidden="true">↗</span></a>
-      </nav>
     </header>
 
-    <main id="conteudo">
-      <section class="hero" id="topo" aria-labelledby="hero-title">
-        <div class="hero-grid-lines" aria-hidden="true"></div>
-        <div class="container hero-layout">
+    <main id="main-content">
+      <section class="hero section-shell" aria-labelledby="hero-title">
+        <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <p class="eyebrow"><span class="eyebrow-dot"></span> Sistema operacional de operações</p>
-            <h1 id="hero-title">Toda operação merece um <em>centro de gravidade.</em></h1>
-            <p class="hero-lead">O OrbitOps conecta pessoas, processos e sinais em um único lugar — para seu time decidir com clareza e executar sem perder velocidade.</p>
+            <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> The autonomous control plane</p>
+            <h1 id="hero-title">Keep every operation <em>in orbit.</em></h1>
+            <p class="hero-intro">OrbitOps turns scattered signals into one clear next move — so your team can act early, move calmly, and ship more of what matters.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#demo">Ver o OrbitOps em ação <span aria-hidden="true">↗</span></a>
-              <a class="text-link" href="#produto">Explorar a plataforma <span aria-hidden="true">↓</span></a>
+              <a class="button button-primary" href="#contact">See OrbitOps in action <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="#platform">Explore the platform <span aria-hidden="true">↓</span></a>
             </div>
-            <div class="hero-proof">
-              <div class="avatar-stack" aria-hidden="true">
-                <span class="avatar avatar-one">M</span>
-                <span class="avatar avatar-two">A</span>
-                <span class="avatar avatar-three">R</span>
-                <span class="avatar avatar-four">+</span>
-              </div>
-              <p><strong>+2.400 times</strong> já operam em órbita</p>
-            </div>
+            <p class="hero-note"><span class="pulse-dot" aria-hidden="true"></span> Live in 14 minutes <span class="note-separator" aria-hidden="true">·</span> No credit card</p>
           </div>
 
-          <div class="hero-visual reveal reveal-delay" aria-label="Painel ilustrativo do OrbitOps">
-            <div class="visual-caption"><span class="live-dot"></span> Operação ao vivo <span class="caption-time">09:41:08 BRT</span></div>
-            <div class="orbit-stage">
-              <div class="orbit-glow" aria-hidden="true"></div>
-              <div class="orbit orbit-a" aria-hidden="true"></div>
-              <div class="orbit orbit-b" aria-hidden="true"></div>
-              <div class="orbit orbit-c" aria-hidden="true"></div>
-              <div class="orbit-node node-lime" aria-hidden="true"></div>
-              <div class="orbit-node node-coral" aria-hidden="true"></div>
-              <div class="orbit-node node-cyan" aria-hidden="true"></div>
-
-              <div class="orbit-core">
-                <div class="core-scan" aria-hidden="true"></div>
-                <span class="core-label">NEXUS</span>
-                <strong>98.4</strong>
-                <span class="core-status"><span class="live-dot"></span> estável</span>
+          <div class="hero-visual reveal reveal-delay-1" aria-label="OrbitOps command center dashboard preview">
+            <div class="visual-stamp">OPS / 24<span>—</span>7</div>
+            <div class="control-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="mono-label">ORBIT / COMMAND CENTER</p>
+                  <p class="panel-title">Good morning, team <span aria-hidden="true">✦</span></p>
+                </div>
+                <span class="live-badge"><i aria-hidden="true"></i> live</span>
               </div>
 
-              <div class="orbit-chip chip-top"><span class="chip-icon chip-icon-lime">↗</span><span><strong>+22%</strong><small>throughput</small></span></div>
-              <div class="orbit-chip chip-right"><span class="chip-icon chip-icon-coral">!</span><span><strong>03</strong><small>atenções</small></span></div>
-              <div class="orbit-chip chip-bottom"><span class="chip-icon chip-icon-cyan">⌁</span><span><strong>14:08</strong><small>latência média</small></span></div>
+              <div class="panel-body">
+                <div class="orbit-display" aria-hidden="true">
+                  <div class="orbit orbit-one"></div>
+                  <div class="orbit orbit-two"></div>
+                  <div class="orbit orbit-three"></div>
+                  <span class="orbit-node node-one"></span>
+                  <span class="orbit-node node-two"></span>
+                  <span class="orbit-node node-three"></span>
+                  <div class="orbit-core"><span>orbit</span><strong>24/7</strong></div>
+                </div>
 
-              <div class="orbit-log log-one"><span class="log-line"></span> Sync concluído <small>agora</small></div>
-              <div class="orbit-log log-two"><span class="log-line log-line-coral"></span> SLA em risco <small>há 4 min</small></div>
+                <div class="signal-list">
+                  <div class="signal-row">
+                    <div class="signal-name"><span class="signal-icon signal-icon-green">↗</span><span>Deploy velocity</span></div>
+                    <strong>+28%</strong>
+                    <span class="signal-trend trend-up">↑</span>
+                  </div>
+                  <div class="signal-row">
+                    <div class="signal-name"><span class="signal-icon signal-icon-coral">!</span><span>Incident risk</span></div>
+                    <strong>low</strong>
+                    <span class="signal-trend trend-down">↓</span>
+                  </div>
+                  <div class="signal-row">
+                    <div class="signal-name"><span class="signal-icon signal-icon-blue">⌁</span><span>Team focus</span></div>
+                    <strong>92%</strong>
+                    <span class="signal-trend trend-up">↑</span>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-footer"><span>Last synced 12 sec ago</span><span class="sync-mark" aria-hidden="true">✦</span></div>
             </div>
-            <div class="visual-footer"><span>Todos os sistemas operacionais</span><span class="footer-pulse" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>99.98% uptime</span></div>
+            <div class="floating-card floating-card-top"><span class="mini-icon">↗</span><span><small>Resolved today</small><strong>128 signals</strong></span></div>
+            <div class="floating-card floating-card-bottom"><span class="mini-avatar">AM</span><span><small>Alex moved a task</small><strong>Release / v2.8</strong></span><span class="check-mark" aria-hidden="true">✓</span></div>
           </div>
         </div>
-        <div class="container hero-note"><span class="mono-label">/01</span><span>Menos firefighting. Mais trabalho que move o ponteiro.</span><span class="scroll-cue" aria-hidden="true">⌄</span></div>
-      </section>
-
-      <section class="signal-strip" aria-label="Resultados dos clientes">
-        <div class="container signal-grid">
-          <div class="signal-intro"><span class="mono-label">EM ÓRBITA COM</span><p>Times que transformam complexidade em vantagem.</p></div>
-          <div class="client-words" aria-label="Clientes OrbitOps"><span>northstar<span class="client-dot">·</span></span><span>QUIVER</span><span class="client-italic">fieldnote</span><span>alto<span class="client-slash">/</span>labs</span><span class="client-mono">MONUMENT</span></div>
+        <div class="container trust-row reveal reveal-delay-2">
+          <p>Trusted by teams that ship continuously</p>
+          <div class="trust-logos" aria-label="Customer logos"><span>northstar</span><span>Meridian</span><span class="logo-serif">kinfolk</span><span>● vertex</span><span>WAVES</span></div>
         </div>
       </section>
 
-      <section class="section product-section" id="produto" aria-labelledby="product-title">
+      <section class="platform-section section-shell" id="platform" aria-labelledby="platform-title">
         <div class="container">
           <div class="section-heading split-heading reveal">
-            <div>
-              <p class="eyebrow"><span class="eyebrow-number">02</span> O sistema</p>
-              <h2 id="product-title">Visibilidade que vira <em>movimento.</em></h2>
-            </div>
-            <p>O OrbitOps reúne o que normalmente vive espalhado em planilhas, chats e dashboards desconectados. O contexto certo aparece no momento certo.</p>
+            <div><p class="eyebrow">01 / One operating rhythm</p><h2 id="platform-title">Less chasing.<br /><span>More knowing.</span></h2></div>
+            <p>From first signal to final handoff, OrbitOps gives every team the context to make the next decision without opening five more tabs.</p>
           </div>
 
-          <div class="product-grid">
-            <div class="feature-stack reveal">
-              <article class="feature-card feature-card-active">
-                <div class="feature-index">01</div>
-                <div><h3>Um pulso para tudo</h3><p>Veja a saúde da operação em segundos, sem caçar a informação.</p></div>
-                <span class="feature-arrow" aria-hidden="true">↗</span>
-              </article>
-              <article class="feature-card">
-                <div class="feature-index">02</div>
-                <div><h3>Alertas que entendem contexto</h3><p>Prioridade baseada em impacto, não em volume de notificações.</p></div>
-                <span class="feature-arrow" aria-hidden="true">↗</span>
-              </article>
-              <article class="feature-card">
-                <div class="feature-index">03</div>
-                <div><h3>Automações com intenção</h3><p>Remova o trabalho repetitivo e deixe o time pensar mais longe.</p></div>
-                <span class="feature-arrow" aria-hidden="true">↗</span>
-              </article>
-              <div class="feature-footnote"><span class="feature-footnote-line"></span><span>Feito para operações reais, com arestas reais.</span></div>
-            </div>
-
-            <div class="command-console reveal reveal-delay">
-              <div class="console-topbar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span class="mono-label">orbitops / command-center</span><span class="console-secure">● encrypted</span></div>
-              <div class="console-intro"><div><span class="mono-label">NEXUS / 24H</span><h3>Onde está a energia<br /><em>agora?</em></h3></div><div class="console-date">13 — 19<br />AGO 2024</div></div>
-              <div class="console-tabs" role="tablist" aria-label="Visões do centro de comando">
-                <button class="console-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-signal" id="tab-signal" data-demo="signal">Sinais</button>
-                <button class="console-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-flow" id="tab-flow" data-demo="flow">Fluxo</button>
-                <button class="console-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-team" id="tab-team" data-demo="team">Time</button>
+          <div class="benefit-grid">
+            <article class="benefit-card benefit-card-feature reveal">
+              <div class="card-kicker"><span class="card-number">01</span><span>Signal center</span></div>
+              <h3>See around corners.</h3>
+              <p>Surface the work, risks, and decisions that matter before they become someone’s fire drill.</p>
+              <div class="signal-map" aria-hidden="true">
+                <div class="map-line map-line-one"></div><div class="map-line map-line-two"></div><div class="map-line map-line-three"></div>
+                <span class="map-dot map-dot-one"></span><span class="map-dot map-dot-two"></span><span class="map-dot map-dot-three"></span><span class="map-dot map-dot-four"></span>
+                <div class="map-label map-label-one">launch</div><div class="map-label map-label-two">momentum</div><div class="map-label map-label-three">risk</div>
               </div>
-              <div class="console-panel is-active" id="panel-signal" role="tabpanel" aria-labelledby="tab-signal" data-panel="signal">
-                <div class="signal-chart"><div class="chart-y"><span>100</span><span>50</span><span>0</span></div><div class="chart-plot"><div class="chart-grid"></div><svg viewBox="0 0 450 150" preserveAspectRatio="none" aria-label="Gráfico de energia operacional nas últimas 24 horas" role="img"><defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#c9f86c" stop-opacity=".3" /><stop offset="1" stop-color="#c9f86c" stop-opacity="0" /></linearGradient></defs><path d="M0,110 C30,104 34,71 66,82 S89,127 116,108 S141,64 172,75 S204,98 229,74 S264,30 291,55 S323,118 346,90 S379,72 402,34 S430,47 450,19 L450,150 L0,150 Z" fill="url(#chartFill)" /><path d="M0,110 C30,104 34,71 66,82 S89,127 116,108 S141,64 172,75 S204,98 229,74 S264,30 291,55 S323,118 346,90 S379,72 402,34 S430,47 450,19" fill="none" stroke="#c9f86c" stroke-width="3" vector-effect="non-scaling-stroke" /></svg><div class="chart-tooltip"><strong>98.4</strong><span>Agora · 09:41</span></div><div class="chart-x"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>agora</span></div></div></div>
-                <div class="signal-rows"><div><span class="row-status row-status-lime"></span><span>Entrega contínua</span><strong>98.4%</strong></div><div><span class="row-status row-status-cyan"></span><span>Capacidade do time</span><strong>87%</strong></div><div><span class="row-status row-status-coral"></span><span>Dependências abertas</span><strong>03</strong></div></div>
-              </div>
-              <div class="console-panel" id="panel-flow" role="tabpanel" aria-labelledby="tab-flow" data-panel="flow" hidden>
-                <div class="flow-list"><div class="flow-item"><span class="flow-time">09:34</span><span class="flow-status flow-status-done">✓</span><span><strong>Release v2.4.1</strong><small>Deploy automatizado · production</small></span><span class="flow-owner">MT</span></div><div class="flow-item"><span class="flow-time">09:28</span><span class="flow-status flow-status-warn">!</span><span><strong>Dependência detectada</strong><small>API de pagamentos · aguardando retorno</small></span><span class="flow-owner">JV</span></div><div class="flow-item"><span class="flow-time">09:12</span><span class="flow-status flow-status-done">✓</span><span><strong>Revisão de incidente</strong><small>Playbook #014 · documentação atualizada</small></span><span class="flow-owner">AM</span></div><div class="flow-item"><span class="flow-time">08:55</span><span class="flow-status flow-status-info">→</span><span><strong>Briefing diário</strong><small>12 participantes · 8 ações geradas</small></span><span class="flow-owner">RS</span></div></div>
-              </div>
-              <div class="console-panel" id="panel-team" role="tabpanel" aria-labelledby="tab-team" data-panel="team" hidden>
-                <div class="team-panel-head"><span class="mono-label">FOCO DISTRIBUÍDO</span><strong>Onde o time está investindo atenção</strong></div><div class="team-bars"><div><span>Entrega</span><div class="team-bar"><i style="width: 78%"></i></div><strong>78%</strong></div><div><span>Qualidade</span><div class="team-bar team-bar-cyan"><i style="width: 62%"></i></div><strong>62%</strong></div><div><span>Incidentes</span><div class="team-bar team-bar-coral"><i style="width: 21%"></i></div><strong>21%</strong></div><div><span>Melhoria</span><div class="team-bar team-bar-violet"><i style="width: 44%"></i></div><strong>44%</strong></div></div><div class="team-avatars"><span>AM</span><span>JV</span><span>MT</span><span>RS</span><span>+8</span><small>12 pessoas conectadas</small></div>
-              </div>
-              <div class="console-footer"><span>Atualiza a cada 30s</span><button type="button" class="console-action" data-console-action><span class="console-action-dot"></span> Simular atualização</button></div>
-              <div class="console-toast" data-console-toast role="status" aria-live="polite"></div>
-            </div>
+              <a class="card-link" href="#contact">Explore signal center <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="benefit-card benefit-card-dark reveal reveal-delay-1">
+              <div class="card-kicker"><span class="card-number">02</span><span>Scenario lanes</span></div>
+              <div class="lane-visual" aria-hidden="true"><span class="lane-label">now</span><span class="lane-line lane-line-active"></span><span class="lane-line"></span><span class="lane-line"></span><i class="lane-marker"></i><i class="lane-marker lane-marker-two"></i></div>
+              <h3>Make the path visible.</h3>
+              <p>Align the room around what’s changing, what’s next, and who owns the move.</p>
+              <a class="card-link" href="#contact">See scenario lanes <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="benefit-card reveal reveal-delay-2">
+              <div class="card-kicker"><span class="card-number">03</span><span>Quiet automation</span></div>
+              <div class="automation-visual" aria-hidden="true"><span class="automation-ring"></span><span class="automation-center">✦</span><span class="automation-label automation-label-one">listen</span><span class="automation-label automation-label-two">route</span><span class="automation-label automation-label-three">learn</span></div>
+              <h3>Let the busywork orbit out.</h3>
+              <p>Automate the nudges and updates. Keep human energy for the decisions only humans can make.</p>
+              <a class="card-link" href="#contact">Meet the automation <span aria-hidden="true">↗</span></a>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="section flow-section" id="fluxo" aria-labelledby="flow-title">
-        <div class="flow-backdrop" aria-hidden="true"><span>CONTEXT</span><span>CONTEXT</span><span>CONTEXT</span></div>
+      <section class="metrics-section section-shell" id="results" aria-labelledby="metrics-title">
         <div class="container">
-          <div class="section-heading narrow-heading reveal">
-            <p class="eyebrow"><span class="eyebrow-number">03</span> O fluxo</p>
-            <h2 id="flow-title">Do sinal à decisão,<br /><em>sem perder o fio.</em></h2>
-            <p>O OrbitOps transforma ruído em sequência: captura o que importa, traz quem resolve e mantém a operação em movimento.</p>
+          <div class="metrics-intro reveal"><p class="eyebrow">02 / The compounding effect</p><h2 id="metrics-title">Quiet systems make<br /><em>loud progress.</em></h2></div>
+          <div class="metrics-grid">
+            <div class="metric reveal"><strong>99.99<span>%</span></strong><p>signal uptime</p><span class="metric-rule"></span></div>
+            <div class="metric reveal reveal-delay-1"><strong>4.8<span>/5</span></strong><p>operator love</p><span class="metric-rule"></span></div>
+            <div class="metric reveal reveal-delay-2"><strong>3.6<span>x</span></strong><p>faster decisions</p><span class="metric-rule"></span></div>
+            <div class="metric reveal reveal-delay-3"><strong>−62<span>%</span></strong><p>status meetings</p><span class="metric-rule"></span></div>
           </div>
-          <div class="workflow-layout">
-            <div class="workflow-list">
-              <article class="workflow-step reveal"><div class="step-marker">01</div><div><span class="mono-label">CAPTURAR</span><h3>O sistema escuta.</h3><p>Integre seus dados e deixe os sinais aparecerem onde o time já trabalha.</p></div></article>
-              <article class="workflow-step reveal reveal-delay"><div class="step-marker">02</div><div><span class="mono-label">ENTENDER</span><h3>O contexto se monta.</h3><p>Incidentes, prazos e dependências ganham uma história que todos conseguem ler.</p></div></article>
-              <article class="workflow-step reveal reveal-delay-2"><div class="step-marker">03</div><div><span class="mono-label">AGIR</span><h3>A próxima ação fica óbvia.</h3><p>O trabalho flui para a pessoa certa, com o próximo passo já no alcance.</p></div></article>
-            </div>
-            <div class="system-map reveal reveal-delay" aria-label="Mapa visual do fluxo OrbitOps">
-              <div class="map-grid" aria-hidden="true"></div><span class="map-orbit map-orbit-one"></span><span class="map-orbit map-orbit-two"></span><span class="map-orbit map-orbit-three"></span>
-              <div class="map-card map-card-source"><span class="map-card-icon">⌁</span><small>signals</small><strong>12,480</strong><span>eventos hoje</span></div>
-              <div class="map-card map-card-context"><span class="map-card-icon map-icon-cyan">◎</span><small>context</small><strong>94%</strong><span>com resolução</span></div>
-              <div class="map-card map-card-action"><span class="map-card-icon map-icon-coral">→</span><small>action</small><strong>+31</strong><span>ações concluídas</span></div>
-              <span class="map-beacon beacon-one"></span><span class="map-beacon beacon-two"></span><span class="map-beacon beacon-three"></span><div class="map-center">O<span>O</span></div>
-              <div class="map-caption"><span class="live-dot"></span> fluxo saudável <span>● 99.98%</span></div>
-            </div>
+          <div class="metric-footnote reveal"><span aria-hidden="true">↗</span> Based on a 2024 survey of 180 operations leaders using OrbitOps for 90+ days.</div>
+        </div>
+      </section>
+
+      <section class="testimonials-section section-shell" aria-labelledby="testimonial-title">
+        <div class="container testimonial-layout">
+          <div class="testimonial-aside reveal"><p class="eyebrow">03 / In their words</p><h2 id="testimonial-title">The calmest<br /><span>room wins.</span></h2><div class="quote-mark" aria-hidden="true">“</div></div>
+          <figure class="testimonial-card reveal reveal-delay-1">
+            <blockquote>OrbitOps gave us the shared language we were missing. We stopped reporting on the work and started moving it.</blockquote>
+            <figcaption><span class="person-avatar">JL</span><span><strong>Jules Lee</strong><small>COO, Northstar Health</small></span><span class="quote-arrow" aria-hidden="true">↗</span></figcaption>
+          </figure>
+          <div class="testimonial-side-note reveal reveal-delay-2"><span class="side-note-line"></span><p>“The best tool on our stack is the one that makes the rest of the stack feel lighter.”</p><span class="side-note-caption">— Mika, VP Operations at Meridian</span></div>
+        </div>
+      </section>
+
+      <section class="pricing-section section-shell" id="pricing" aria-labelledby="pricing-title">
+        <div class="container">
+          <div class="section-heading pricing-heading reveal"><div><p class="eyebrow">04 / Room to grow</p><h2 id="pricing-title">A clear orbit at<br /><em>every altitude.</em></h2></div><div class="billing-switcher" role="group" aria-label="Billing frequency"><span>Monthly</span><button class="billing-toggle" type="button" aria-pressed="false"><span class="billing-knob"></span><span class="sr-only">Switch to annual billing</span></button><span>Annual <b>save 20%</b></span></div></div>
+          <div class="pricing-grid">
+            <article class="price-card reveal"><p class="price-label">Starter</p><p class="price-description">For small teams finding their rhythm.</p><div class="price"><span class="currency">$</span><strong data-monthly="0" data-annual="0">0</strong><span>/mo</span></div><a class="button button-ghost price-button" href="#contact">Start free <span aria-hidden="true">↗</span></a><ul class="feature-list"><li>Up to 5 operators</li><li>Signal inbox</li><li>Weekly orbit summary</li></ul></article>
+            <article class="price-card price-card-featured reveal reveal-delay-1"><span class="popular-tag">Most momentum</span><p class="price-label">Growth</p><p class="price-description">For teams turning momentum into a system.</p><div class="price"><span class="currency">$</span><strong data-monthly="49" data-annual="39">49</strong><span>/mo</span></div><a class="button button-primary price-button" href="#contact">Start 14-day trial <span aria-hidden="true">↗</span></a><ul class="feature-list"><li>Unlimited operators</li><li>Scenario lanes + automations</li><li>Slack and Linear sync</li><li>Priority support</li></ul></article>
+            <article class="price-card reveal reveal-delay-2"><p class="price-label">Command</p><p class="price-description">For organizations where clarity compounds.</p><div class="price price-custom"><strong>Let’s talk</strong></div><a class="button button-ghost price-button" href="#contact">Talk to a human <span aria-hidden="true">↗</span></a><ul class="feature-list"><li>Everything in Growth</li><li>Custom controls + permissions</li><li>Dedicated success partner</li><li>Quarterly operations review</li></ul></article>
           </div>
         </div>
       </section>
 
-      <section class="section metric-section" aria-labelledby="metric-title">
-        <div class="container metric-layout">
-          <div class="metric-copy reveal"><p class="eyebrow"><span class="eyebrow-number">04</span> O impacto</p><h2 id="metric-title">Tempo devolvido<br />é <em>capacidade.</em></h2><p>Descubra quanto espaço o OrbitOps pode devolver para seu time parar de perseguir status e começar a fazer trabalho significativo.</p><a class="text-link" href="#demo">Calcular com meus dados <span aria-hidden="true">↗</span></a></div>
-          <div class="calculator-card reveal reveal-delay"><div class="calculator-head"><span class="mono-label">CALCULADORA DE CAPACIDADE</span><span class="calculator-live"><span class="live-dot"></span> estimativa ao vivo</span></div><label for="teamRange">Quantas pessoas operam com você?<output data-team-value for="teamRange">24 pessoas</output></label><input id="teamRange" type="range" min="1" max="5" value="2" step="1" aria-describedby="calculator-note" /><div class="range-labels" aria-hidden="true"><span>1</span><span>10</span><span>25</span><span>50</span><span>100+</span></div><div class="calculator-results"><div class="calculator-result result-highlight"><span>horas devolvidas / mês</span><strong data-hours-value>40</strong><small>para o trabalho que importa</small></div><div class="calculator-result"><span>economia potencial / ano</span><strong data-savings-value>R$ 86k</strong><small>com base em R$ 180/h</small></div></div><p class="calculator-note" id="calculator-note">Estimativa baseada em dados agregados de times OrbitOps. Seus resultados podem variar.</p></div>
+      <section class="faq-section section-shell" id="faq" aria-labelledby="faq-title">
+        <div class="container faq-layout">
+          <div class="faq-heading reveal"><p class="eyebrow">05 / Good questions</p><h2 id="faq-title">Before we<br /><span>launch.</span></h2><p>Still curious? <a href="mailto:hello@orbitops.example">Ask us anything&nbsp; ↗</a></p></div>
+          <div class="faq-list reveal reveal-delay-1">
+            <details open><summary>What exactly is OrbitOps?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>OrbitOps is an operating layer for modern teams. It connects the signals already scattered across your tools, then turns them into a shared view of priorities, risks, and next moves.</p></div></details>
+            <details><summary>How long does setup take?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>Most teams are live in under 14 minutes. Connect the tools you already use, invite your operators, and OrbitOps starts learning your operating rhythm from day one.</p></div></details>
+            <details><summary>Will this replace our project tools?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>No. OrbitOps sits above your existing tools so the context travels with the work. Your team can keep using the systems they know while seeing the whole orbit at once.</p></div></details>
+            <details><summary>Can I try it before committing?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>Yes. Growth includes a 14-day trial with no credit card required. You can also book a guided demo if you would like to see your own workflow in the command center.</p></div></details>
+            <details><summary>Is our operational data secure?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>OrbitOps encrypts data in transit and at rest, supports role-based access, and gives you control over retention. Our Command plan includes custom security reviews for your team.</p></div></details>
+          </div>
         </div>
       </section>
 
-      <section class="section security-section" id="seguranca" aria-labelledby="security-title">
-        <div class="container">
-          <div class="section-heading split-heading security-heading reveal"><div><p class="eyebrow"><span class="eyebrow-number">05</span> O perímetro</p><h2 id="security-title">Clareza sem<br /><em>abrir brechas.</em></h2></div><p>Uma operação conectada só é boa quando também é confiável. Segurança está no núcleo, não em um slide de vendas.</p></div>
-          <div class="security-grid"><article class="security-card reveal"><span class="security-number">A.</span><span class="security-icon">⌁</span><h3>Dados no seu controle</h3><p>Criptografia em trânsito e em repouso, com permissões granulares por equipe e projeto.</p><a class="card-link" href="#demo">Conhecer a arquitetura <span aria-hidden="true">↗</span></a></article><article class="security-card security-card-featured reveal reveal-delay"><span class="security-number">B.</span><span class="security-icon">◌</span><h3>Pronto para auditoria</h3><p>Trilhas de atividade completas e exportáveis. Cada ação tem contexto, dono e timestamp.</p><a class="card-link" href="#demo">Ver controles <span aria-hidden="true">↗</span></a></article><article class="security-card reveal reveal-delay-2"><span class="security-number">C.</span><span class="security-icon">✦</span><h3>Confiabilidade por padrão</h3><p>99,98% de uptime nos últimos 12 meses, com redundância e monitoramento contínuo.</p><a class="card-link" href="#demo">Visitar status <span aria-hidden="true">↗</span></a></article></div>
-          <div class="compliance-row reveal"><span class="mono-label">PRONTO PARA SEU PERÍMETRO</span><span>ISO 27001 <i></i></span><span>SOC 2 TYPE II <i></i></span><span>LGPD <i></i></span><span>SSO / SCIM <i></i></span></div>
+      <section class="contact-section section-shell" id="contact" aria-labelledby="contact-title">
+        <div class="container contact-card reveal">
+          <div class="contact-copy"><p class="eyebrow">Ready when you are</p><h2 id="contact-title">Bring the room<br /><em>into focus.</em></h2><p>Tell us where the work gets noisy. We’ll show you a quieter way through.</p></div>
+          <form class="signup-form" novalidate>
+            <div class="form-field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Ada Lovelace" required /><span class="field-error" id="name-error" role="alert"></span></div>
+            <div class="form-field"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="ada@company.com" required /><span class="field-error" id="email-error" role="alert"></span></div>
+            <button class="button button-primary form-submit" type="submit">Find our orbit <span aria-hidden="true">↗</span></button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+            <p class="form-privacy">By submitting, you agree to receive occasional notes from OrbitOps. No noise, promise.</p>
+          </form>
         </div>
-      </section>
-
-      <section class="section pricing-section" id="precos" aria-labelledby="pricing-title">
-        <div class="container">
-          <div class="section-heading pricing-heading reveal"><p class="eyebrow"><span class="eyebrow-number">06</span> O próximo passo</p><h2 id="pricing-title">Comece pequeno.<br /><em>Pense orbital.</em></h2><p>Planos que crescem com a complexidade da sua operação, sem cobrar por assento e sem contratos nebulosos.</p></div>
-          <div class="pricing-grid"><article class="price-card reveal"><div class="price-top"><span class="mono-label">EXPLORER</span><span class="price-tag">para começar</span></div><h3>R$ 0</h3><p class="price-description">Para times descobrirem um novo jeito de operar.</p><ul><li><span>✓</span> Até 5 pessoas</li><li><span>✓</span> 3 fluxos ativos</li><li><span>✓</span> Sinais essenciais</li></ul><a class="button button-outline" href="#demo">Começar grátis <span aria-hidden="true">↗</span></a></article><article class="price-card price-card-featured reveal reveal-delay"><div class="price-ribbon">MAIS ESCOLHIDO</div><div class="price-top"><span class="mono-label">MISSION CONTROL</span><span class="price-tag">para escalar</span></div><h3>R$ 49 <small>/ pessoa / mês</small></h3><p class="price-description">Para operações que precisam de mais contexto, agora.</p><ul><li><span>✓</span> Pessoas ilimitadas</li><li><span>✓</span> Automações sem limite</li><li><span>✓</span> Playbooks e auditoria</li></ul><a class="button button-primary" href="#demo">Agendar uma demo <span aria-hidden="true">↗</span></a></article><article class="price-card reveal reveal-delay-2"><div class="price-top"><span class="mono-label">DEEP SPACE</span><span class="price-tag">para ir longe</span></div><h3>Vamos conversar</h3><p class="price-description">Para operações críticas, distribuídas e cheias de nuance.</p><ul><li><span>✓</span> Ambientes dedicados</li><li><span>✓</span> Suporte estratégico</li><li><span>✓</span> SLA personalizado</li></ul><a class="button button-outline" href="#demo">Falar com a equipe <span aria-hidden="true">↗</span></a></article></div>
-          <div class="faq-wrap reveal"><p class="mono-label">PERGUNTAS QUE RECEBEMOS</p><div class="faq-grid"><details open><summary>Quanto tempo leva para começar? <span>+</span></summary><p>Em geral, seu primeiro fluxo está no ar em menos de uma tarde. Começamos com uma operação real, não com um projeto paralelo.</p></details><details><summary>O OrbitOps substitui nossas ferramentas? <span>+</span></summary><p>Não precisa. Ele conecta as ferramentas que você já usa e adiciona a camada de contexto e orquestração que estava faltando.</p></details><details><summary>Posso testar antes de falar com vendas? <span>+</span></summary><p>Sim. O plano Explorer é gratuito e já inclui o essencial para você sentir o pulso da plataforma.</p></details></div></div>
-        </div>
-      </section>
-
-      <section class="section closing-section" id="demo" aria-labelledby="closing-title">
-        <div class="container"><div class="closing-card reveal"><div class="closing-decoration" aria-hidden="true"><span></span><span></span><span></span></div><div class="closing-copy"><p class="eyebrow"><span class="eyebrow-dot"></span> Sua próxima órbita começa aqui</p><h2 id="closing-title">Tire o time do modo<br /><em>apagar incêndio.</em></h2><p>Conte um pouco sobre sua operação. A gente mostra onde o OrbitOps pode fazer diferença já na primeira conversa.</p></div><form class="demo-form" id="demoForm" novalidate><div class="form-field"><label for="name">Seu nome</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Como podemos te chamar?" required /></div><div class="form-field"><label for="email">Email de trabalho</label><input id="email" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com" required /></div><div class="form-field"><label for="teamSize">Tamanho do time</label><select id="teamSize" name="teamSize" required><option value="">Selecione uma opção</option><option>1 — 10 pessoas</option><option>11 — 50 pessoas</option><option>51 — 200 pessoas</option><option>201+ pessoas</option></select></div><button class="button button-primary button-submit" type="submit">Quero conhecer o OrbitOps <span aria-hidden="true">↗</span></button><p class="form-note">Sem spam. Só uma conversa de 30 minutos sobre a sua operação.</p></form></div></div>
       </section>
     </main>
 
-    <footer class="site-footer"><div class="container footer-top"><a class="brand" href="#topo" aria-label="OrbitOps, voltar ao início"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="5.2" fill="currentColor" /><ellipse cx="17" cy="17" rx="14.2" ry="6.4" stroke="currentColor" stroke-width="1.8" transform="rotate(-24 17 17)" /><circle cx="28.2" cy="9.8" r="2.2" fill="#c9f86c" /></svg></span><span>Orbit<span class="brand-accent">Ops</span></span></a><div class="footer-links"><a href="#produto">Produto</a><a href="#seguranca">Segurança</a><a href="#precos">Planos</a><a href="#demo">Contato</a></div><div class="footer-social"><a href="#demo" aria-label="OrbitOps no LinkedIn">in</a><a href="#demo" aria-label="OrbitOps no X">𝕏</a></div></div><div class="container footer-bottom"><span>© <span data-year>2024</span> OrbitOps Systems. Feito para manter o mundo em movimento.</span><span class="footer-status"><span class="live-dot"></span> todos os sistemas operacionais</span></div></footer>
-    <div class="toast" data-toast role="status" aria-live="polite"></div>
+    <footer class="site-footer">
+      <div class="container footer-top"><a class="brand" href="#top" aria-label="OrbitOps home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>orbit<span>ops</span></span></a><p>For teams with places to go.</p><div class="footer-links"><a href="#platform">Platform</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="mailto:hello@orbitops.example">Contact</a></div></div>
+      <div class="container footer-bottom"><span>© 2024 OrbitOps, Inc.</span><span>Made for the moving parts.</span><a href="#top">Back to top ↑</a></div>
+    </footer>
+
+    <script src="script.js" defer></script>
   </body>
 </html>

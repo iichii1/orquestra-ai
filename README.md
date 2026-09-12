@@ -1,16 +1,8 @@
 # OrbitOps — landing page
 
-Landing page responsiva para o OrbitOps, um sistema operacional de operações para times que precisam transformar sinais em decisões e ações.
+Landing page responsiva para o OrbitOps, uma plataforma de operações para times que entregam continuamente. O projeto é intencionalmente leve: HTML, CSS e JavaScript vanilla, sem build step ou dependências de runtime.
 
-## O que foi construído
-
-- Hero com visual orbital e painel de operação ao vivo.
-- Seções de produto, fluxo, impacto, segurança, planos, FAQ e formulário de demo.
-- Interações em JavaScript: menu mobile, tema claro/escuro, tabs acessíveis, calculadora de capacidade, atualização simulada e feedback de formulário.
-- Acessibilidade: skip link, landmarks semânticos, foco visível, navegação por teclado, estados ARIA e suporte a `prefers-reduced-motion`.
-- HTML, CSS e JavaScript separados, sem dependências de build.
-
-## Como executar
+## Executar localmente
 
 Abra `index.html` diretamente no navegador ou sirva a pasta com qualquer servidor estático:
 
@@ -20,12 +12,17 @@ python -m http.server 8000
 
 Depois, acesse `http://localhost:8000`.
 
-## Estrutura
+## Incluído
 
-```text
-index.html   # marcação e conteúdo
-styles.css   # tokens, layout, responsividade e animações
-script.js    # interações e acessibilidade comportamental
-```
+- Hero com preview visual do centro de comando, benefícios, métricas, depoimento, preços, FAQ e CTA.
+- Menu mobile com estados ARIA, link para pular ao conteúdo e foco visível.
+- Tema claro/escuro persistido em `localStorage`, com fallback para a preferência do sistema.
+- Alternância mensal/anual nos preços.
+- Formulário de contato demonstrativo com validação de nome e e-mail, mensagens de erro e estado de sucesso.
+- Layout responsivo para mobile, tablet e desktop, além de suporte a `prefers-reduced-motion`.
 
-As fontes Bricolage Grotesque, Manrope e DM Mono são carregadas do Google Fonts quando há conexão. O layout tem fallbacks locais para continuar legível offline.
+## Arquivos
+
+- `index.html` — estrutura semântica e conteúdo.
+- `styles.css` — identidade visual, temas, animações e breakpoints.
+- `script.js` — interações do menu, tema, preços, FAQ nativo e validação do formulário.
